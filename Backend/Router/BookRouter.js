@@ -66,8 +66,6 @@ bookRoute.get("/books", async (req, res) => {
 
 bookRoute.post("/books", async (req, res) => {
   try {
-    //  const movie = new BookModel(req.body)
-    //  await movie.save()
     await BookModel.insertMany(req.body);
     res.status(201).send({ msg: "Book has been added" });
   } catch (err) {
