@@ -1,0 +1,42 @@
+[
+    {
+      "title": "Eat That Frog",
+      "author": "Brain Tracy",
+      "genre": "Non-Fiction",
+      "price": 199
+    },
+    {
+      "title": "Atomic Habits",
+      "author": "James Clear",
+      "genre": "Non-Fiction",
+      "price": 599
+    },
+  
+    {
+      "title": "Mindset",
+      "author": "Carol Dweck",
+      "genre": "Non-Fiction",
+      "price": 499
+    },
+    {
+      "title": "Drive",
+      "author": "Daniel Pink",
+      "genre": "Non-Fiction",
+      "price": 399
+    },
+    {
+      "title": "The 4-Hour Work Week",
+      "author": "Tim Ferriss",
+      "genre": "Non-Fiction",
+      "price": 449
+     
+    },
+    {
+      "title": "Who moved my cheese?",
+      "author": "Spencer Johnson",
+      "genre": "Non-Fiction",
+      "price": 99
+    
+    }
+  ]
+  

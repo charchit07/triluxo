@@ -20,6 +20,7 @@ bookRoute.get("/books", async (req, res) => {
   const price_low = req.query.price_low;
   const price_high = req.query.price_high;
   const genre=req.query.genre
+  const author=req.query.author
   if (price_high && price_low) {
     try {
       let books = await BookModel.find({
@@ -33,13 +34,25 @@ bookRoute.get("/books", async (req, res) => {
   
   }else if(genre){
      try {
-       let books = await BookModel.find({genre})
+       let books = await BookModel.find({
+        genre: { $regex: `${genre}`, $options: "i" },
+      });
        res.send(books)
      } catch (err) {
       console.log(err);
       res.status(500).send({ message: err.message });
      }
-  }
+  }else if(author){
+    try {
+      let books = await BookModel.find({
+        author: { $regex: `${author}`, $options: "i" },
+      });
+      res.send(books)
+    } catch (err) {
+     console.log(err);
+     res.status(500).send({ message: err.message });
+    }
+ }
    else {
     try {
       let books = await BookModel.find();
@@ -51,7 +64,7 @@ bookRoute.get("/books", async (req, res) => {
 });
 
 
-bookRoute.post("/addbooks", async (req, res) => {
+bookRoute.post("/books", async (req, res) => {
   try {
     //  const movie = new BookModel(req.body)
     //  await movie.save()
@@ -62,7 +75,7 @@ bookRoute.post("/addbooks", async (req, res) => {
   }
 });
 
-bookRoute.put("/update/:id", async (req, res) => {
+bookRoute.put("/books/:id", async (req, res) => {
   const ID = req.params.id;
   const payload = req.body;
   try {
@@ -73,7 +86,7 @@ bookRoute.put("/update/:id", async (req, res) => {
   }
 });
 
-bookRoute.delete("/delete/:id", async (req, res) => {
+bookRoute.delete("/books/:id", async (req, res) => {
   const ID = req.params.id;
   try {
     await BookModel.findByIdAndDelete({ _id: ID });
