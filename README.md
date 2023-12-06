@@ -4,4 +4,7 @@
 <h1>Video link</h1>
 <img>https://drive.google.com/file/d/1i4SMTUADDfSCjTxQ3doiRyJci_gbLzyX/view?usp=sharing</img>
 
+<h1>Backend Deployment url</h1>
+<img>https://triluxonodedemo.onrender.com/</img>
+
 
